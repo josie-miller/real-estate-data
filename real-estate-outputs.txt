@@ -1,0 +1,69 @@
+runfile('/Users/josephinemiller/Downloads/untitled0.py', wdir='/Users/josephinemiller/Downloads')
+       X1 transaction date  X2 house age  ...  X5 latitude  X6 longitude
+count           414.000000    414.000000  ...   414.000000    414.000000
+mean           2013.148971     17.712560  ...    24.969030    121.533361
+std               0.281967     11.392485  ...     0.012410      0.015347
+min            2012.667000      0.000000  ...    24.932070    121.473530
+25%            2012.917000      9.025000  ...    24.963000    121.528085
+50%            2013.167000     16.100000  ...    24.971100    121.538630
+75%            2013.417000     28.150000  ...    24.977455    121.543305
+max            2013.583000     43.800000  ...    25.014590    121.566270
+
+[8 rows x 6 columns]
+   X1 transaction date  X2 house age  ...  X5 latitude  X6 longitude
+0            -0.823683      1.255628  ...     1.125430      0.448762
+1            -0.823683      0.157086  ...     0.912444      0.401139
+2             1.541151     -0.387791  ...     1.486860      0.688183
+3             1.246435     -0.387791  ...     1.486860      0.688183
+4            -1.121951     -1.117223  ...     0.834188      0.592937
+
+[5 rows x 6 columns]
+Selected Features from RFE: ['X1 transaction date', 'X2 house age', 'X3 distance to the nearest MRT station', 'X5 latitude']
+Multilinear Regression MSE (RFE selected features): 45.14285141128579
+Lasso MSE: 50.58804016488612
+Ridge MSE: 45.19336218919904
+
+Cross-Validation Results (Folds: 2):
+Multilinear Regression MSE: 67.72046507408437
+Lasso MSE: 71.18702066447085
+Ridge MSE: 67.70181591570883
+
+Cross-Validation Results (Folds: 3):
+Multilinear Regression MSE: 66.39493017415295
+Lasso MSE: 70.02902004076768
+Ridge MSE: 66.38879640202758
+
+Cross-Validation Results (Folds: 4):
+Multilinear Regression MSE: 66.49814479212628
+Lasso MSE: 70.07903613610104
+Ridge MSE: 66.4929007773104
+
+Cross-Validation Results (Folds: 5):
+Multilinear Regression MSE: 65.59590773410332
+Lasso MSE: 69.25930928764596
+Ridge MSE: 65.59504012601434
+
+Cross-Validation Results (Folds: 6):
+Multilinear Regression MSE: 66.30647033730082
+Lasso MSE: 69.75152390747115
+Ridge MSE: 66.29878631864261
+
+Cross-Validation Results (Folds: 7):
+Multilinear Regression MSE: 66.01344593241397
+Lasso MSE: 69.55406020205831
+Ridge MSE: 66.00983117685287
+
+Cross-Validation Results (Folds: 8):
+Multilinear Regression MSE: 65.96409971320058
+Lasso MSE: 69.52466559079355
+Ridge MSE: 65.96084406129417
+
+Cross-Validation Results (Folds: 9):
+Multilinear Regression MSE: 65.78971657820813
+Lasso MSE: 69.24672793439304
+Ridge MSE: 65.7866797117477
+
+Cross-Validation Results (Folds: 10):
+Multilinear Regression MSE: 65.86540222617333
+Lasso MSE: 69.40131305787699
+Ridge MSE: 65.86259542942338

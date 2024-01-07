@@ -1,0 +1,97 @@
+  Notes for EDA:
+1. Histograms
+    a. logitude and latitude seem to be more normally distributed
+    b. transaction date does not appear to have a strong relationship
+    c. distance to the nearest MRT station is very skewed to the left
+    d. number of convenience stores and house age don't follow normal or skewed distribution
+2. Correlation matrix
+    a. distance to the nearest MRT station has the highest absolute value correlation coefficent, making it the strongest
+    b. number of convenience stores, latitude, and longitude have slightly lower absolute value correlation coefficents, but they are all still over 0.50, so are strong
+    c. transaction date and house age have very low absolute value correlation coefficents, making them extremely weak as inputs.
+3. Scatter plots
+    a. longitude and latitude follow a moderate/weak linear relationship with the output variable, respectively
+    b. convenience stores have a similar moderate/weak linear relationship with the output
+    c. distance to the nearest MRT station has a moderate to strong relationship to the output
+    d. house age and transaction date have extremely weak relationships with the output, transaction date a bit weaker than house age
+
+Notes for part b:
+1. I log transformed the feature 'X3 distance to the nearest MRT station'
+   because the data was very skewed
+2. I preformed standardization on all the input variables in order to ensure
+   that all the features were on a consistent scale. This is crucial for 
+   linear regression as it assign coefficients to features
+
+Notes for d (lasso + ridge):
+
+Test Performance Measures (Step c):
+
+Multilinear Regression MSE (RFE selected features): MSE = 45.14
+Lasso MSE: MSE = 50.59
+Ridge MSE: MSE = 45.19
+
+With this scenairo, the regularization techniques, Lasso and Ridge, 
+did not improve the performance over the MLR model (based on the MSE).
+The Multilinear Regression model with RFE-selected features achieved
+the lowest MSE.
+
+While regularization methods like Lasso and Ridge are valuable 
+for preventing overfitting in some cases, 
+it seems that the dataset and feature selection already resulted 
+in a model with a good bias-variance trade-off. 
+In such cases, the additional complexity introduced by regularization 
+may not provide substantial benefits.
+
+Notes for e (cross-val):
+
+For the Multilinear Regression Model, the cross-validated MSE decreases 
+as the number of folds increases, suggesting improved performance with more folds.
+For the Lasso and Ridge Models, the cross-validated MSE shows a similar trend.
+Overall, Ridge and regular was doing the best as they showed a trend of
+relatively lower MSE values (compared to Lasso). In some cases, Ridge 
+is lower, so my earlier analysis of it being useless is incorrect.
+
+
+The best model, based on results, is the Multilinear Regression model 
+with RFE-selected features. The number of folds used for cross-validation is 9.
+"Multilinear Regression MSE: 65.78971657820813"
+
+Justifcation:
+
+The MLR model wtih RFE-selected features achieved the lowest MSE on the test
+dataset, indicating superior performance in comparsion to the regularized models.
+
+Nine-folds resulted in the second MSE overall, with Ridge MSE with 9 folds being slightly lower.
+However, because MLR is preforming better overall, I believe it should be chosen over the Ridge.
+
+Notes:
+
+In the context of the bias-variance trade-off:
+
+The Multilinear Regression model with RFE-selected features 
+appears to have the best bias-variance trade-off. 
+It achieves the lowest MSE on the test set and exhibits consistent 
+performance in cross-validation.
+
+Lasso and Ridge models perform consistently across cross-validation 
+folds but tend to have a slightly higher MSE on the test set. 
+They are considered as linear regression models that can reduce overfitting (variance),
+but in this case, they may be over-regularized.
+
+The consistent performance of the Multilinear Regression model 
+across cross-validation folds suggests that it generalizes well 
+and has a good balance between bias and variance, thus reenforcing the chosen model from step e.
+
+In the cross-validation step, the Multilinear Regression model's 
+performance appears to be better when using a higher number of folds (more generalization) 
+than on the initial test set. This suggests that cross-validation provides a more 
+reliable estimate of the model's generalization performance than a single train-test split. 
+However, the general trend of the Multilinear Regression model outperforming
+Lasso and Ridge models is consistent across both evaluation methods.
+
+Summary for last few steps:
+Based on the provided information and the results, 
+the Multilinear Regression model with RFE-selected features is the best choice. 
+It achieves the lowest MSE on the test set and demonstrates consistent performance 
+in cross-validation, making it a suitable model for the given dataset.
+
+ 
